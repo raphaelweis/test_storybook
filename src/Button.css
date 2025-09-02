@@ -1,7 +1,10 @@
 button {
     border: none;
+    display: flex;
     border-radius: 9999px;
     font-weight: bold;
+    justify-content: center;
+    gap: 1rem;
     cursor: pointer;
     padding: 0 1rem;
 }
@@ -15,4 +18,8 @@ button {
     background-color: transparent;
     border: 2px solid blueviolet;
     color: blueviolet;
+}
+
+.icon {
+    justify-content: space-between;
 }
