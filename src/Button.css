@@ -3,6 +3,7 @@ button {
     border-radius: 9999px;
     font-weight: bold;
     cursor: pointer;
+    padding: 0 1rem;
 }
 
 .primary {
