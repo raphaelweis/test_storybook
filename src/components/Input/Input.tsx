@@ -1,4 +1,4 @@
-import "./Input.css";
+import "@/components/Input/Input.css";
 
 import dangerousIcon from "./assets/dangerous.svg";
 import infoIcon from "./assets/info.svg";

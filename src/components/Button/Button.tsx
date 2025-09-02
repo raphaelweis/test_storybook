@@ -1,4 +1,4 @@
-import "./Button.css";
+import "@/components/Button/Button.css";
 
 interface ButtonProps {
     label: string,
