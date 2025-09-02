@@ -1,16 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { fn } from 'storybook/test';
-import add from './assets/add.svg';
-import addViolet from './assets/addBlack.svg';
+import add from '@/assets/add.svg';
+import addViolet from '@/assets/addBlack.svg';
 
 
-import Button from './Button';
+import Button from '@/components/Button/Button';
 
 /**
  * This is a simple button with a primary and secondary variant. It can also use 
  * an icon in addition to the label.
  */
 const meta = {
+    title: 'Design System/Atoms/Buttons',
     component: Button,
     parameters: {
         layout: 'centered',

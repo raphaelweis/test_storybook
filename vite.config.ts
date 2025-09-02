@@ -13,7 +13,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@': "C:\\Users\\Raphael.Weis\\D\\test_storybook\\src",
+      '@': path.resolve(__dirname, './src'),
     },
   },
   test: {
