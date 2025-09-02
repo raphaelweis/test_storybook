@@ -1,0 +1,47 @@
+input {
+    padding: 1rem;
+    border-radius: 8px;
+    border: 2px solid grey;
+}
+
+input:focus {
+    outline: none;
+}
+
+img {
+    height: 16px;
+    width: 16px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.messageContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.error {
+    border: 2px solid red;
+}
+
+.info {
+    border: 2px solid blue;
+}
+
+.messageText {
+    margin: 0.5rem 0;
+    font-size: x-small;
+    text-align: start;
+}
+
+.errorText {
+    color: red;
+}
+
+.infoText {
+    color: blue;
+}
