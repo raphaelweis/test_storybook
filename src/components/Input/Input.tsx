@@ -5,19 +5,19 @@ import infoIcon from "@/assets/info.svg";
 
 interface InputProps {
   name?: string;
-  errorBorder?: boolean;
-  infoBorder?: boolean;
-  error?: string;
-  info?: string;
+  error?: boolean;
+  info?: boolean;
+  errorMessage?: string;
+  infoMessage?: string;
   placeholder?: string;
 }
 
 export default function Input({
   name,
-  errorBorder,
-  infoBorder,
-  error,
-  info,
+  error: errorBorder,
+  info: infoBorder,
+  errorMessage: error,
+  infoMessage: info,
   placeholder,
 }: InputProps) {
   const resolveClassName = () => {

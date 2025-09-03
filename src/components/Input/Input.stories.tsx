@@ -36,7 +36,7 @@ export const Neutral: Story = {
 export const Error: Story = {
   args: {
     ...Neutral.args,
-    error: "This input is in an error state",
+    errorMessage: "This input is in an error state",
   },
 };
 
@@ -46,7 +46,7 @@ export const Error: Story = {
 export const Info: Story = {
   args: {
     ...Neutral.args,
-    info: "This input has an information attached to it",
+    infoMessage: "This input has an information attached to it",
   },
 };
 
@@ -57,7 +57,7 @@ export const Info: Story = {
 export const ErrorBorder: Story = {
   args: {
     ...Neutral.args,
-    errorBorder: true,
+    error: true,
   },
 };
 
@@ -67,6 +67,6 @@ export const ErrorBorder: Story = {
 export const InfoBorder: Story = {
   args: {
     ...Neutral.args,
-    infoBorder: true,
+    info: true,
   },
 };
