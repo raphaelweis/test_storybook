@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import Form from "@/components/Form/Form";
+import LoginForm from "@/components/Form/Form";
 
 /**
  * This input is used to enter data in forms.
  */
 const meta = {
-  title: "Design System/Molecules/Form",
-  component: Form,
+  title: "Design System/Molecules/LoginForm",
+  component: LoginForm,
   parameters: {
     layout: "centered",
     docs: {
@@ -15,11 +15,35 @@ const meta = {
         "This form is used to show storybook features when working with a more complex component",
     },
   },
-} satisfies Meta<typeof Form>;
+} satisfies Meta<typeof LoginForm>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/**
+ * This is the form's default state, when the user hasn't yet interacted with it.
+ */
 export const Neutral: Story = {
-  args: {},
+  args: {
+    loggedIn: false,
+  },
+};
+
+/**
+ * This is the form's default state, when the user hasn't yet interacted with it.
+ */
+export const LoginFailed: Story = {
+  args: {
+    ...Neutral.args,
+    error: "Email or password is incorrect!",
+  },
+};
+
+/**
+ * If the login attempt was successful, the form will display a success message.
+ */
+export const LoggedIn: Story = {
+  args: {
+    loggedIn: true,
+  },
 };

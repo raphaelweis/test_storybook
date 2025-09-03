@@ -2,16 +2,27 @@ import "@/components/Form/Form.css";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
 
-export default function Form() {
-  const login = (formData: FormData) => {
-    console.log(formData.get("email"));
-    console.log(formData.get("password"));
+interface LoginFormProps {
+  loggedIn: boolean;
+  error?: string;
+}
+
+export default function LoginForm({ loggedIn, error }: LoginFormProps) {
+  const login = () => {
+    // const email = formData.get("email");
+    // const password = formData.get("password");
+    // if (email === "example@loreal.com" && password === "pass123") {
+    // }
   };
 
-  return (
+  return loggedIn ? (
+    <div className="logged-in-container">
+      <p>Logged In !</p>
+    </div>
+  ) : (
     <form action={login}>
-      <Input placeholder="Email..." />
-      <Input placeholder="Password..." />
+      <Input placeholder="Email..." errorBorder={Boolean(error)} />
+      <Input placeholder="Password..." error={error} />
       <Button primary={true} label="Login" type="submit" />
     </form>
   );

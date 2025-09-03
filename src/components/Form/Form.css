@@ -3,3 +3,14 @@ form {
   flex-direction: column;
   gap: 1rem;
 }
+
+.logged-in-container {
+    background-color: #eeeeee;
+    font-weight: bold;
+    border-radius: 16px;
+    padding: 3rem;
+}
+
+.logged-in-container > p {
+    color: blueviolet;
+}
