@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import Input from "@/components/Input/Input";
+import Input from "@/v1/Input/Input";
 
 /**
  * This input is used to enter data in forms.
  */
 const meta = {
-  title: "Design System/Atoms/Input",
+  title: "V1/Atoms/Input",
   component: Input,
   parameters: {
     layout: "centered",

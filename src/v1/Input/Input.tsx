@@ -1,7 +1,7 @@
-import "@/components/Input/Input.css";
+import "@/v1/Input/Input.css";
 
-import dangerousIcon from "@/assets/dangerous.svg";
-import infoIcon from "@/assets/info.svg";
+import dangerousIcon from "@/v1/assets/dangerous.svg";
+import infoIcon from "@/v1/assets/info.svg";
 
 interface InputProps {
   name?: string;

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Button from "@/components/Button/Button";
+import Button from "@/v1/Button/Button";
 import add from "@/assets/add.svg";
 
 function App() {

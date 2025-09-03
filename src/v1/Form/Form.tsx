@@ -1,6 +1,6 @@
-import "@/components/Form/Form.css";
-import Input from "../Input/Input";
-import Button from "../Button/Button";
+import "@/v1/Form/Form.css";
+import Input from "@/v1/Input/Input";
+import Button from "@/v1/Button/Button";
 
 interface LoginFormProps {
   loggedIn: boolean;
