@@ -4,10 +4,11 @@ interface ButtonProps {
     label: string,
     iconUrl?: string,
     primary?: boolean;
-    onClick: () => void;
+    type?: "submit" | "reset" | "button";
+    onClick?: () => void;
 }
 
-export default function Button({ label, iconUrl, primary = false, onClick }: ButtonProps
+export default function Button({ label, iconUrl, primary = false, type, onClick }: ButtonProps
 ) {
     const resolveClassName = () => {
         let className = "";
@@ -18,7 +19,7 @@ export default function Button({ label, iconUrl, primary = false, onClick }: But
     }
 
     return (<>
-        <button className={resolveClassName()} onClick={onClick}>
+        <button type={type} className={resolveClassName()} onClick={onClick}>
             <p>{label}</p>
             {iconUrl && <img src={iconUrl} />}
         </button>

@@ -52,3 +52,24 @@ export const Info: Story = {
         info: "This input has an information attached to it",
     }
 }
+
+/**
+ * Sometimes you may want to only display the error border because your input is
+ * in a form and you don't want multiple error messages.
+ */
+export const ErrorBorder: Story = {
+    args: {
+        ...Neutral.args,
+        errorBorder: true,
+    }
+}
+
+/**
+ * Also available with the info variant.
+ */
+export const InfoBorder: Story = {
+    args: {
+        ...Neutral.args,
+        infoBorder: true,
+    }
+}
