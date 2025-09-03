@@ -16,7 +16,7 @@ export default function Button({
   onClick,
 }: ButtonProps) {
   const resolveClassName = () => {
-    let className = "";
+    let className = "v1-button ";
     className += primary ? "primary " : "secondary ";
     className += iconUrl ? "icon " : "";
 

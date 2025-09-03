@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { fn } from "storybook/test";
-import add from "@/v1/assets/add.svg";
-import addViolet from "@/v1/assets/addBlack.svg";
+import add from "@/assets/add.svg";
+import addViolet from "@/assets/addBlack.svg";
 
 import Button from "@/v1/Button/Button";
 
