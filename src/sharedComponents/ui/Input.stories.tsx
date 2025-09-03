@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import { Input } from "@/sharedComponents/ui/Input";
 import { Button } from "@/sharedComponents/ui/Button";
+import { Label } from "@/sharedComponents/ui/Label";
 
 /**
  * This is a simple input, initially generated using shadcn.
@@ -42,6 +43,20 @@ export const Disabled: Story = {
     ...Default.args,
     disabled: true,
   },
+};
+
+export const WithLabel: Story = {
+  args: {
+    ...Default.args,
+    type: "email",
+    placeholder: "Storybook email",
+  },
+  render: (args) => (
+    <div className="grid w-full max-w-sm items-center gap-3">
+      <Label htmlFor="email">Email</Label>
+      <Input {...args} />
+    </div>
+  ),
 };
 
 export const WithButton: Story = {
