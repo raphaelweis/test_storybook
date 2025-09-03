@@ -1,8 +1,9 @@
 import "@/v1/Button/Button.css";
+import type { ReactElement } from "react";
 
 interface ButtonProps {
   label: string;
-  iconUrl?: string;
+  icon?: ReactElement;
   primary?: boolean;
   type?: "submit" | "reset" | "button";
   onClick?: () => void;
@@ -10,7 +11,7 @@ interface ButtonProps {
 
 export default function Button({
   label,
-  iconUrl,
+  icon,
   primary = false,
   type,
   onClick,
@@ -18,7 +19,7 @@ export default function Button({
   const resolveClassName = () => {
     let className = "v1-button ";
     className += primary ? "primary " : "secondary ";
-    className += iconUrl ? "icon " : "";
+    className += icon ? "icon " : "";
 
     return className;
   };
@@ -27,7 +28,7 @@ export default function Button({
     <>
       <button type={type} className={resolveClassName()} onClick={onClick}>
         <p>{label}</p>
-        {iconUrl && <img src={iconUrl} />}
+        {icon}
       </button>
     </>
   );

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Button from "@/v1/Button/Button";
-import add from "@/assets/add.svg";
+import Add from "@/assets/add.svg?react";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -9,7 +9,7 @@ function App() {
     <>
       <Button
         label="Compteur + 1"
-        iconUrl={add}
+        icon={<Add className="fill-primary-foreground"/>}
         primary={true}
         onClick={() => setCount(count + 1)}
       />

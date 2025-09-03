@@ -1,7 +1,7 @@
 import "@/v1/Input/Input.css";
 
-import dangerousIcon from "@/assets/dangerous.svg";
-import infoIcon from "@/assets/info.svg";
+import Dangerous from "@/assets/dangerous.svg?react";
+import Info from "@/assets/info.svg?react";
 
 interface InputProps {
   name?: string;
@@ -37,7 +37,11 @@ export default function Input({
       />
       {(error || info) && (
         <div className="messageContainer">
-          <img src={error ? dangerousIcon : infoIcon} />
+          {error ? (
+            <Dangerous className="fill-primary-foreground" />
+          ) : (
+            <Info className="fill-primary-foreground" />
+          )}
           <p className={"messageText " + (error ? "errorText" : "infoText")}>
             {error ? error : info}
           </p>

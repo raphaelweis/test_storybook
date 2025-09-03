@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { fn } from "storybook/test";
-import add from "@/assets/add.svg";
-import addViolet from "@/assets/addBlack.svg";
+import Add from "@/assets/add.svg?react";
 
 import Button from "@/v1/Button/Button";
 
@@ -52,7 +51,7 @@ export const Secondary: Story = {
 export const PrimaryWithIcon: Story = {
   args: {
     ...Primary.args,
-    iconUrl: add,
+    icon: <Add className="fill-primary-foreground"/>,
   },
 };
 
@@ -62,6 +61,6 @@ export const PrimaryWithIcon: Story = {
 export const SecondaryWithIcon: Story = {
   args: {
     ...Secondary.args,
-    iconUrl: addViolet,
+    icon: <Add className="fill-primary-foreground"/>,
   },
 };

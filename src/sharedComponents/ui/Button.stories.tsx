@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import add from "@/assets/add.svg";
+import Add from "@/assets/add.svg?react";
 
 import { Button } from "@/sharedComponents/ui/Button";
 
@@ -101,12 +101,14 @@ export const Large: Story = {
   },
 };
 
+const add = <Add className="fill-primary-foreground" />;
+
 /**
  * You can also use an icon instead of text
  */
 export const Icon: Story = {
   args: {
-    children: <img src={add} />,
+    children: add,
     size: "icon",
   },
 };
@@ -117,10 +119,6 @@ export const Icon: Story = {
  */
 export const LabelIcon: Story = {
   args: {
-    children: (
-      <>
-        shadcn button <img src={add} />
-      </>
-    ),
+    children: <>shadcn button {add}</>,
   },
 };
