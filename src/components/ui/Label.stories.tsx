@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { Label } from "@/sharedComponents/ui/Label";
+import Label from "@/components/ui/Label";
 
 /**
  * This is a simple and accessible label, generated using shadcn.
@@ -27,4 +27,3 @@ export const Default: Story = {
     children: "Storybook label.",
   },
 };
-

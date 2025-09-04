@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import Add from "@/assets/add.svg?react";
 
-import { Button } from "@/sharedComponents/ui/Button";
+import Button from "@/components/ui/Button";
 
 /**
  * This is a simple button, initially generated using shadcn.

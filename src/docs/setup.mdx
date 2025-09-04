@@ -1,0 +1,82 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="shadcn/Setup" />
+
+# Demo Shadcn design system with storybook.
+
+In this repository, you can find components generated with shadcn, and documented using
+storybook. Click on the component you wish to view in the sidebar, and play with
+it's props using storybook interactive features.
+
+## Shadcn setup
+
+The shadcn setup documented here applies to [React+Vite projects](https://vite.dev/guide/).
+If you wish to use shadcn with a different framework, refer to the [official shadcn docs](https://ui.shadcn.com/docs).
+
+### Shadcn initial installation
+
+To prepare your project for shadcn components, first follow the [install instructions](https://ui.shadcn.com/docs/installation/vite)
+from the shadcn installation page.
+
+### Modifying the default directory for component generation
+
+By default, generating a new component with the shadcn cli will place it in
+`src/components/ui`. The guidelines at l'Oréal instead require us to place those
+in `src/sharedComponents/ui`. To modify the default install directory, put the following
+in the file `components.json` that was generated in the previous step.
+
+```json
+{
+  // ... other shadcn configuration
+  "aliases": {
+    "components": "@/sharedComponents",
+    "utils": "@/lib/utils",
+    "ui": "@/sharedComponents/ui",
+    "lib": "@/lib",
+    "hooks": "@/hooks"
+  }
+}
+```
+
+### Understanding `sharedComponents` and `components`
+
+shadcn will generate it's components in `src/sharedComponents/ui`. Those components
+should not be modified, as they are generated and may be overridden by future updates.
+Instead, you should create a wrapper for the generated component that you will put
+in `src/components/ui` that you can then safely customize to fit your needs. Here is
+an example of such a wrapper for the `Label` component.
+
+```tsx
+import * as React from "react";
+import * as LabelPrimitive from "@radix-ui/react-label";
+
+import { Label as SharedLabel } from "@/sharedComponents/ui/label";
+
+// Check the component code in sharedComponent to figure out the type to use
+// for your component props
+type LabelProps = React.ComponentProps<typeof LabelPrimitive.Root>;
+
+export default function Label({ children, ...props }: LabelProps) {
+  // You can then add props or override existing ones before returning the base
+  // shadcn component.
+  return <SharedLabel {...props}>{children}</SharedLabel>;
+}
+```
+
+# Updating shadcn components
+
+If you noticed that a shadcn component has been updated and you would like to benefit
+from it, you may update the component by first:
+
+1. Deleting the shared component in the `src/sharedComponents/ui` folder.
+2. Re-running the add component command with the latest shadcn cli version.
+
+```
+pnpm dlx shadcn@latest add <your component>
+```
+
+You can then check your wrapper to see if it should be updated to match the updated
+the base shadcn component.
+
+> **_NOTE_** shadcn itself relies on the [radix-ui](https://www.radix-ui.com/) library defined in `package.json`,
+> and you may update it with the classic npm package update process.

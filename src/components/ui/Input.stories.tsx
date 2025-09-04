@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { Input } from "@/sharedComponents/ui/Input";
-import { Button } from "@/sharedComponents/ui/Button";
-import { Label } from "@/sharedComponents/ui/Label";
+import Input from "@/components/ui/Input";
+import Button from "@/components/ui/Button";
+import Label from "@/components/ui/Label";
 
 /**
  * This is a simple input, initially generated using shadcn.
