@@ -45,13 +45,18 @@ export const Secondary: Story = {
   },
 };
 
+const addIconArgs = {
+  height: 24,
+  width: 24,
+  className: "outline-none border-none stroke-none",
+};
 /**
  * You can also add an icon to the right of the label, using a string URL.
  */
 export const PrimaryWithIcon: Story = {
   args: {
     ...Primary.args,
-    icon: <Add className="fill-primary-foreground"/>,
+    icon: <Add {...addIconArgs} className="fill-primary-foreground" />,
   },
 };
 
@@ -61,6 +66,8 @@ export const PrimaryWithIcon: Story = {
 export const SecondaryWithIcon: Story = {
   args: {
     ...Secondary.args,
-    icon: <Add className="fill-primary-foreground"/>,
+    icon: (
+      <Add {...addIconArgs} fill="blueviolet" />
+    ),
   },
 };
