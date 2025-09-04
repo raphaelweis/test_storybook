@@ -3,6 +3,12 @@ import "@/index.css";
 
 const preview: Preview = {
   parameters: {
+    backgrounds: {
+      options: {
+        dark: { name: "dark", value: "#0a0a0a" },
+        light: { name: "light", value: "#ffffff" },
+      },
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -20,6 +26,31 @@ const preview: Preview = {
     },
   },
   tags: ["autodocs"],
+  globalTypes: {
+    theme: {
+      description: "Global theme for components",
+      toolbar: {
+        title: "Theme",
+        icon: "circlehollow",
+        items: ["light", "dark"],
+        dynamicTitle: true,
+      },
+    },
+  },
+  initialGlobals: {
+    theme: "light",
+  },
+  decorators: [
+    (Story, context) => {
+      const selectedTheme = context.globals.theme || "light";
+      const htmlElement = document.documentElement;
+
+      htmlElement.classList.remove("light", "dark");
+      htmlElement.classList.add(selectedTheme);
+
+      return Story();
+    },
+  ],
 };
 
 export default preview;
